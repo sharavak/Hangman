@@ -110,5 +110,6 @@ reset.addEventListener('click', function () {
     word = random();
     win.parentElement.classList.remove('winners')
     img.src = images[0];
+    prev.textContent = '';
     c = 1;
 })
