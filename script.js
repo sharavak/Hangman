@@ -19,7 +19,7 @@ let noOfGuess = 0;
 let c = 1;
 let index = {};
 let images = ['Hangman-0.png', 'Hangman-1.png', 'Hangman-2.png', 'Hangman-3.png', 'Hangman-4.png', 'Hangman-5.png', 'Hangman-6.png'];
-img.src = images[0];
+img.src = `Images/${images[0]}`;
 reset.disabled = true;
 
 function replace() {
@@ -79,8 +79,8 @@ show.addEventListener('keydown', function (e) {
                        }
                     }  
             }else if (c === images.length - 1) {
-                    img.src = images[c]
-                    win.parentElement.classList.add('winners')
+                    img.src = `Images/${images[c]}`;
+                    win.parentElement.classList.add('winners');
                     win.innerHTML = `<p class="win">You Lost the game</p><p class="win">The Word is ${word}`;
                     }else {
                     show.nextElementSibling.style.display = 'inline-block';
