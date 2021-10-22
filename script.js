@@ -20,7 +20,7 @@ let noOfGuess = 0;
 let c = 1;
 let index = {};
 let images = ['Hangman-0.png', 'Hangman-1.png', 'Hangman-2.png', 'Hangman-3.png', 'Hangman-4.png', 'Hangman-5.png', 'Hangman-6.png'];
-img.src =`Images/${images[0];
+img.src =`Images/${images[0]};
 reset.disabled = true;
 
 function replace() {
