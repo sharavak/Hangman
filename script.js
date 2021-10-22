@@ -40,7 +40,7 @@ category.addEventListener('change', function () {
 function random() {
     let cate = words[userValue];
     const rand = Math.floor(Math.random() * cate.length);
-    cate = cate[rand];
+    cate = cate[rand].toLowerCase();
     word = cate;
     for (let c = 0; c < cate.length; c++) {
         index[c]=word[c]
@@ -104,4 +104,5 @@ reset.addEventListener('click', function () {
     word = random();
     win.parentElement.classList.remove('winners');
     img.src=`Images/${images[0]}`;
+    c = 1;
 })
