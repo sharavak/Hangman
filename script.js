@@ -103,5 +103,6 @@ reset.addEventListener('click', function () {
     show.nextElementSibling.style.display = 'none';
     replace()
     word = random();
-    win.parentElement.classList.remove('winners')
+    win.parentElement.classList.remove('winners');
+    img.src=`Images/${images[0]}`;
 })
