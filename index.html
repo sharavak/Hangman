@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1>Hangman Game</h1>
+    <select name="category" id="category">
+        <option value="" disabled selected>Select Your Category</option>
+        <option value="Fruit">Fruit</option>
+        <option value="Vegetable">Vegetable</option>
+        <option value="Animal">Animal</option>
+    </select>
+    <main>
+        <div class="han">
+            <p class="show" contenteditable="true"></p>
+            <div>
+                <span>Your Previously guessed letter:</span><span class="prev"></span>
+            </div>
+        </div>
+        <div class="guess">
+            <p class="noOfGuess"></p>
+        </div>
+        <div class="already">
+            <p class="alrea"></p>
+        </div>
+        <div class="images">
+            <img src="" alt="">
+        </div>
+        <div class="winner">
+            <p class="win"></p>
+        </div>
+        <button class="newWord">New Word</button>
+    </main>
+    <script src="words.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
