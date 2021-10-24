@@ -8,6 +8,7 @@ const reset = document.querySelector('.newWord');
 let span = document.querySelector('span');
 let prev = document.querySelector('.prev');
 show.nextElementSibling.style.display = 'none';
+let user = document.querySelector('.user');
 
 let userValue = '';
 let words = wordList();
@@ -22,6 +23,7 @@ let index = {};
 let images = ['Hangman-0.png', 'Hangman-1.png', 'Hangman-2.png', 'Hangman-3.png', 'Hangman-4.png', 'Hangman-5.png', 'Hangman-6.png'];
 img.src =`Images/${images[0]}`;
 reset.disabled = true;
+let alphabets = 'abcdefghijklmnopqrstuvwxyz';
 
 function replace() {
     position = [];
@@ -53,11 +55,10 @@ function random() {
     return word
 }
 
-show.addEventListener('keydown', function (e) {
-    repeat.textContent = ''
-    switch (e.code) {
-        case 'Key' + e.code.replace('Key', ''):
-            check = e.key.toLowerCase();
+user.addEventListener('input', function (e) {
+        if (user.value.length === 1 && alphabets.includes(user.value.toLowerCase())) {
+            repeat.textContent = '';
+            check = user.value.toLowerCase();
             if (word.includes(check)) {
                 if (!Object.values(index).includes(check)) {
                     repeat.textContent = 'You already Guessed the letter'
@@ -65,9 +66,9 @@ show.addEventListener('keydown', function (e) {
                 if (word.indexOf(check) !== -1 && dupWord.indexOf(check) !== -1) {
                     for (let i in index) {
                         if (index[i] !== '') {
-                        
                             let d = dupWord.indexOf(check);
                             let pus = pushed.splice(d, 1);
+                            console.log(word);
                             position[pus] = check;
                             show.textContent = position.join(' ').replaceAll(',', ' ');
                             dupWord = dupWord.replace(check, '');
@@ -83,24 +84,25 @@ show.addEventListener('keydown', function (e) {
             }
             else {
                 if (c === images.length - 1) {
+                    img.src = images[c]
                     win.parentElement.classList.add('winners')
                     win.innerHTML = `<p class="win">You Lost the game</p><p class="win">The Word is ${word}`;
                 }
                 else {
-                    img.src = `Images/${images[c]}`;
                     show.nextElementSibling.style.display = 'inline-block';
                     prev.textContent+=check+','
                     guess.textContent = `No of Guess:${noOfGuess += 1}`;
+                    img.src = images[c]
                     c = c + 1
                 }
             }
-            e.preventDefault()
-            break;
-        default:
-            e.preventDefault();
-    }
+              user.value = '';
+        }
+      
+        else {
+            user.value = '';
+        }
 })
-
 reset.addEventListener('click', function () {
     win.textContent = '';
     guess.textContent = ''
