@@ -84,7 +84,7 @@ user.addEventListener('input', function (e) {
             }
             else {
                 if (c === images.length - 1) {
-                    img.src = images[c]
+                    img.src = `Images/${images[c]}`;
                     win.parentElement.classList.add('winners')
                     win.innerHTML = `<p class="win">You Lost the game</p><p class="win">The Word is ${word}`;
                 }
@@ -92,7 +92,7 @@ user.addEventListener('input', function (e) {
                     show.nextElementSibling.style.display = 'inline-block';
                     prev.textContent+=check+','
                     guess.textContent = `No of Guess:${noOfGuess += 1}`;
-                    img.src = images[c]
+                    img.src =`Images/${images[c]}`;
                     c = c + 1
                 }
             }
