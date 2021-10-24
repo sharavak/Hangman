@@ -56,7 +56,7 @@ function random() {
 }
 
 user.addEventListener('input', function (e) {
-        if (user.value.length === 1 && alphabets.includes(user.value.toLowerCase())) {
+        if (user.value.length === 1 && alphabets.includes(user.value.toLowerCase())&&show.textContent!=='') {
             repeat.textContent = '';
             check = user.value.toLowerCase();
             if (word.includes(check)) {
