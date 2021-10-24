@@ -12,6 +12,7 @@ h1{
     color: white;
     font-family: sans-serif;
     font-weight: 500;
+    margin:5px 0px;
 }
 select{
     width: 15.5rem;
@@ -21,6 +22,7 @@ select{
     background-color: rgb(4, 19, 54);
     color: white;
     border-radius: 15px;
+    border:none;
 }
 p{
     margin: 0px;
@@ -51,6 +53,7 @@ input{
     font-size: 0.8rem;
     width: 10rem;
     height: 1rem;
+    margin-top: 10px;
 }
 input:focus{
     outline: none;
@@ -68,6 +71,7 @@ input:focus{
     color: rgb(9, 175, 106);
     font-size: 1.5rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align:center;
 }
 .images{
     width: 100%;
@@ -113,3 +117,17 @@ span{
     color: rgb(4, 19, 54);
     border-radius: 5px;
 }
+@media(max-width:400px){
+    .alrea{
+        font-size:1.1rem;
+    }
+    .noOfGuess{
+        font-size:1;
+    }
+    .show{
+        font-size:1.7rem;
+    }
+    select{
+        font-size:1rem;
+        height:1rem;
+    }
