@@ -41,13 +41,15 @@ main{
     align-items: center;
     color: white;
 }
-.show{
+.show,input{
     font-size: 2rem;
     font-family: 'Inconsolata', monospace;
     color: white;
-
 }
 
+input:focus{
+    outline: none;
+}
 .show:focus{
     outline: none;
     cursor: none;
